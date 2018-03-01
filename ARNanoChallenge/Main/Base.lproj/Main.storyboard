@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="9dM-rd-Xsx">
+            <objects>
+                <viewController id="n1q-aJ-BPT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hy1-0F-3jq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Nano Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSQ-l5-343">
+                                <rect key="frame" x="16" y="36" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-Ke-noL">
+                                <rect key="frame" x="16" y="313.5" width="343" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="23Y-yu-aKl"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="ipF-0u-PLe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="csB-Xd-zy5" firstAttribute="trailing" secondItem="aDe-Ke-noL" secondAttribute="trailing" constant="16" id="13U-Xt-Khd"/>
+                            <constraint firstItem="csB-Xd-zy5" firstAttribute="trailing" secondItem="tSQ-l5-343" secondAttribute="trailing" constant="16" id="2vl-5P-hy5"/>
+                            <constraint firstItem="tSQ-l5-343" firstAttribute="top" secondItem="csB-Xd-zy5" secondAttribute="top" constant="16" id="93j-Ai-kju"/>
+                            <constraint firstItem="tSQ-l5-343" firstAttribute="leading" secondItem="csB-Xd-zy5" secondAttribute="leading" constant="16" id="R5R-PQ-zSa"/>
+                            <constraint firstItem="aDe-Ke-noL" firstAttribute="centerY" secondItem="Hy1-0F-3jq" secondAttribute="centerY" id="dMx-0y-unT"/>
+                            <constraint firstItem="aDe-Ke-noL" firstAttribute="leading" secondItem="csB-Xd-zy5" secondAttribute="leading" constant="16" id="gFt-1q-VdZ"/>
+                            <constraint firstItem="aDe-Ke-noL" firstAttribute="centerX" secondItem="Hy1-0F-3jq" secondAttribute="centerX" id="pCS-xk-3VN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="csB-Xd-zy5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2NE-NA-f16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARNanoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="123"/>
+        </scene>
+    </scenes>
+</document>

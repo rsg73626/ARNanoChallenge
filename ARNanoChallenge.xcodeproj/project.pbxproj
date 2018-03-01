@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF6F98562047151E0093E81E /* Experiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6F98552047151E0093E81E /* Experiments.swift */; };
+		CF6F98582047404A0093E81E /* MeteorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6F98572047404A0093E81E /* MeteorManager.swift */; };
 		CFE5DB71204470A20080C763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE5DB70204470A20080C763 /* AppDelegate.swift */; };
 		CFE5DB73204470A20080C763 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE5DB72204470A20080C763 /* art.scnassets */; };
 		CFE5DB75204470A20080C763 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE5DB74204470A20080C763 /* ViewController.swift */; };
 		CFE5DB78204470A20080C763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE5DB76204470A20080C763 /* Main.storyboard */; };
 		CFE5DB7A204470A20080C763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE5DB79204470A20080C763 /* Assets.xcassets */; };
 		CFE5DB7D204470A20080C763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE5DB7B204470A20080C763 /* LaunchScreen.storyboard */; };
+		CFE5DB8520447ADF0080C763 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE5DB8420447ADF0080C763 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF6F98552047151E0093E81E /* Experiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiments.swift; sourceTree = "<group>"; };
+		CF6F98572047404A0093E81E /* MeteorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorManager.swift; sourceTree = "<group>"; };
 		CFE5DB6D204470A20080C763 /* ARNanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE5DB70204470A20080C763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE5DB72204470A20080C763 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		CFE5DB79204470A20080C763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE5DB7C204470A20080C763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE5DB7E204470A20080C763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE5DB8420447ADF0080C763 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,34 @@
 		CFE5DB6F204470A20080C763 /* ARNanoChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				CFE5DB8720447B780080C763 /* Main */,
+				CFE5DB8620447B430080C763 /* Util */,
 				CFE5DB70204470A20080C763 /* AppDelegate.swift */,
 				CFE5DB72204470A20080C763 /* art.scnassets */,
-				CFE5DB74204470A20080C763 /* ViewController.swift */,
-				CFE5DB76204470A20080C763 /* Main.storyboard */,
 				CFE5DB79204470A20080C763 /* Assets.xcassets */,
 				CFE5DB7B204470A20080C763 /* LaunchScreen.storyboard */,
 				CFE5DB7E204470A20080C763 /* Info.plist */,
 			);
 			path = ARNanoChallenge;
+			sourceTree = "<group>";
+		};
+		CFE5DB8620447B430080C763 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CFE5DB8420447ADF0080C763 /* Types.swift */,
+				CF6F98572047404A0093E81E /* MeteorManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		CFE5DB8720447B780080C763 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CFE5DB74204470A20080C763 /* ViewController.swift */,
+				CFE5DB76204470A20080C763 /* Main.storyboard */,
+				CF6F98552047151E0093E81E /* Experiments.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6F98582047404A0093E81E /* MeteorManager.swift in Sources */,
+				CF6F98562047151E0093E81E /* Experiments.swift in Sources */,
 				CFE5DB75204470A20080C763 /* ViewController.swift in Sources */,
+				CFE5DB8520447ADF0080C763 /* Types.swift in Sources */,
 				CFE5DB71204470A20080C763 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
