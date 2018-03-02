@@ -20,9 +20,12 @@ public class MeteorsManager {
         case BackRight
     }
     
+    private var isStoped: Bool = false
     private var positions: [Position:SCNVector3] = [Position:SCNVector3]();
     private let velocity: TimeInterval = 3.0
+    var vc: ViewController!
     private var scene: ARSCNView!
+    var meteors: [SCNNode] = [SCNNode]()
     
     init(x: CGFloat, y: CGFloat, z: CGFloat, maxMove: CGFloat) {
         let left: CGFloat = x - (maxMove*0.25)
@@ -43,11 +46,19 @@ public class MeteorsManager {
         self.createMeteorAt(.FrontLeft)
     }
     
+    func stop() {
+        self.isStoped = true
+        self.meteors.forEach { $0.removeFromParentNode() }
+    }
+    
     private func createMeteorAt(_ at: Position) {
-        guard let meteor = Types.Nodes.meteor?.clone(), let position = self.positions[at] else { return }
-        meteor.position = position
-        let to = at == .FrontLeft ? Position.BackLeft : at == .FrontCenter ? Position.BackCenter : Position.BackRight
-        self.move(meteor, to)
+        if !self.isStoped {
+            guard let meteor = Types.Nodes.meteor?.clone(), let position = self.positions[at] else { return }
+            self.meteors.append(meteor)
+            meteor.position = position
+            let to = at == .FrontLeft ? Position.BackLeft : at == .FrontCenter ? Position.BackCenter : Position.BackRight
+            self.move(meteor, to)
+        }
     }
     
     private func move(_ meteor: SCNNode, _ to: Position) {
@@ -67,9 +78,17 @@ public class MeteorsManager {
         let fadeOut = SCNAction.fadeOut(duration: self.velocity*0.3)
         let scaleDown = SCNAction.scale(by: 0, duration: self.velocity*0.3)
         let desappearGroup = SCNAction.group([fadeOut, scaleDown])
-        let desappear = SCNAction.sequence([wait, desappearGroup, SCNAction.removeFromParentNode()])
+        let remove = SCNAction.run { n in
+            let index = self.meteors.index(of: n)
+            self.meteors.remove(at: index!)
+        }
+        let desappear = SCNAction.sequence([wait, desappearGroup, SCNAction.removeFromParentNode(), remove])
         
-        let group = SCNAction.group([appear, move, desappear])
+        let point = SCNAction.sequence([
+            SCNAction.wait(duration: self.velocity*0.6),
+            SCNAction.run { _ in if !self.vc.isGameOver { self.vc.score+=1 } }
+        ])
+        let group = SCNAction.group([point, appear, move, desappear])
         let sequence = SCNAction.sequence([group, createAnother])
         
         self.scene.scene.rootNode.addChildNode(meteor)

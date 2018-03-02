@@ -121,3 +121,19 @@
  
  }
  */
+
+/*
+ override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+ print("*** Touches Moved ***")
+ let touchesArray = Array(touches)
+ guard let beginTouch = touches.first, let endTouch = touchesArray.last else { return }
+ let begin = beginTouch.location(in: sceneView)
+ let end = endTouch.location(in: sceneView)
+ if begin.x > end.x {
+ print("*** Right ***")
+ self.move(to: .Right)
+ }else if begin.x < end.x {
+ print("*** Left ***")
+ self.move(to: .Left)
+ }
+ }*/
